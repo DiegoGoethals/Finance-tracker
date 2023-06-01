@@ -1,0 +1,13 @@
+.account-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.75rem;
+    margin: 0.75rem;
+    background-color: #fff;
+    box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}

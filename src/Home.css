@@ -1,0 +1,10 @@
+#accounts {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.home {
+    text-align: center;
+}

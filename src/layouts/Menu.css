@@ -1,0 +1,12 @@
+.menu {
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #222;
+    color: whitesmoke;
+    z-index: 2;
+}

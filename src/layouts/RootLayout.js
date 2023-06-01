@@ -1,13 +1,13 @@
+import "./Root.css";
 import { Outlet } from 'react-router-dom';
-import Header from './Header.js';
+import Menu from './Menu.js';
 
 function RootLayout() {
 
   return (
     <div className = "root">
-      <div className='header'>
-        <Header/>
-      </div>
+      <p id="title">Finance Tracker</p>
+      <Menu/>
       <main>
         <Outlet/>
       </main>

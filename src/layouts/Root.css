@@ -11,4 +11,5 @@
     padding: 1rem;
     font-size: 2rem;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }

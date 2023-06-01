@@ -3,7 +3,7 @@
         {
             "id": "1",
             "name": "sidejobs",
-            "amount": 0,
+            "balance": 100,
             "income": [
                     {
                         "source": "babysitting",
@@ -26,6 +26,30 @@
                         "source": "food",
                         "amount": 20,
                         "date": "2023-05-01"
+                    }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "casino",
+            "balance": -100,
+            "income": [
+                    {
+                        "source": "blackjack",
+                        "amount": 150,
+                        "date": "2023-01-01"
+                    },
+                    {
+                        "source": "backjack",
+                        "amount": 150,
+                        "date": "2023-05-01"
+                    }
+            ],
+            "expenses": [
+                    {
+                        "source": "blackjack",
+                        "amount": 500,
+                        "date": "2023-01-01"
                     }
             ]
         }

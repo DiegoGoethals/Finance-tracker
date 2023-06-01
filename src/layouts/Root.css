@@ -3,3 +3,12 @@
     font-weight: 700;
     text-align: center;
 }
+
+.icon {
+    position : absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}

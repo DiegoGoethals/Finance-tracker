@@ -1,7 +1,7 @@
 .account-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 20rem;
     height: 20rem;
@@ -10,4 +10,41 @@
     background-color: #fff;
     box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.account-card:hover {
+    transform: scale(1.05);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    aspect-ratio: 1;
+    border: solid 0.1rem #000;
+    border-radius: 50%;
+}
+
+.account-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.account-balance {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+.account-balance::before {
+    content: "€";
 }

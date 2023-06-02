@@ -1,4 +1,5 @@
 import AccountCard from './AccountCard';
+import AddCard from './AddCard';
 import './Home.css';
 import { useEffect, useState } from 'react';
 
@@ -23,6 +24,7 @@ function Home() {
                         <AccountCard account={account}/>
                     </li>
                 ))}
+            <AddCard />
             </ul>
         </div>
     );

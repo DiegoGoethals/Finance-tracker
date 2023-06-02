@@ -8,3 +8,27 @@
 .home {
     text-align: center;
 }
+
+.add-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.75rem;
+    margin: 0.75rem;
+    background-color: #fff;
+    box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border:rgba(0, 0, 0, 0.2) 0.1rem dashed;
+}
+
+.add-card:hover {
+    transform: scale(1.05);
+}
+
+.add-card-button {
+    font-size: 5rem;
+    color: rgba(0, 0, 0, 0.2);
+}

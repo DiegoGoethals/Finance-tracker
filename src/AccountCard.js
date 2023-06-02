@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./AccountCard.css";
 
 function AccountCard(props) {
@@ -10,12 +11,12 @@ function AccountCard(props) {
     }
 
     return (
-        <div className="account-card">
+        <NavLink to={`/accounts/${props.id}`} className="account-card">
             <div className="content-wrapper">
                 <p className="account-name">{name}</p>
                 <p className={balanceClass}>{balance}</p>
             </div>
-        </div>
+        </NavLink>
     );
 }
 

@@ -21,10 +21,10 @@ function Home() {
             <ul id='accounts'>
                 {accounts.map((account) => (
                     <li key={account.id}>
-                        <AccountCard account={account}/>
+                        <AccountCard account={account} id={account.id}/>
                     </li>
                 ))}
-            <AddCard />
+            <AddCard/>
             </ul>
         </div>
     );

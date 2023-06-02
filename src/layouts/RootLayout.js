@@ -24,7 +24,7 @@ function RootLayout() {
     const menu = document.querySelector(".menu");
     const icon = document.querySelector(".icon");
     menu.style.transform = "translateX(0)";
-    icon.style.transform = "translateX(100%)";
+    icon.style.transform = "translateX(175%)";
   }
 
   return (

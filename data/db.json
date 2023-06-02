@@ -4,54 +4,399 @@
             "id": "1",
             "name": "sidejobs",
             "balance": 100,
-            "income": [
-                    {
-                        "source": "babysitting",
-                        "amount": 80,
-                        "date": "2023-01-01"
-                    },
-                    {
-                        "source": "babysitting",
-                        "amount": 60,
-                        "date": "2023-05-01"
-                    }
-            ],
-            "expenses": [
-                    {
-                        "source": "food",
-                        "amount": 20,
-                        "date": "2023-01-01"
-                    },
-                    {
-                        "source": "food",
-                        "amount": 20,
-                        "date": "2023-05-01"
-                    }
-            ]
+            "months": {
+                "january": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "february": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "march": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "april": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "may": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "june": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "july": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "august": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "september": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "october": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "november": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "december": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                }
+            }
         },
         {
             "id": "2",
             "name": "casino",
             "balance": -100,
-            "income": [
-                    {
-                        "source": "blackjack",
-                        "amount": 150,
-                        "date": "2023-01-01"
-                    },
-                    {
-                        "source": "backjack",
-                        "amount": 150,
-                        "date": "2023-05-01"
-                    }
-            ],
-            "expenses": [
-                    {
-                        "source": "blackjack",
-                        "amount": 500,
-                        "date": "2023-01-01"
-                    }
-            ]
+            "months": {
+                "january": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "february": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "march": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "april": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "may": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "june": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "july": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "august": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "september": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "october": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "november": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                },
+                "december": {
+                    "income": [
+                        {
+                            "source": "babysitting",
+                            "amount": 80,
+                            "date": "2023-01-01"
+                        }
+                    ],
+                    "expenses": [
+                        {
+                            "source": "food",
+                            "amount": 20,
+                            "date": "2023-01-01"
+                        }
+                    ]
+                }
+            }
         }
     ]
 }

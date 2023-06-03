@@ -3,6 +3,11 @@ import './AccountTable.css';
 function AccountTable(props) {
 
     const months = props.months;
+    document.querySelectorAll('td').forEach(td => {
+        if (td.innerText.includes('-')) {
+            td.classList.add('negative');
+        }
+    });
 
     return (
         <table>
@@ -19,19 +24,19 @@ function AccountTable(props) {
                         <tr key={month}>
                             <td>{month}</td>
                             <td>
-                                {months[month].income.reduce(
+                                €{months[month].income.reduce(
                                 (accumulator, income) => accumulator + income.amount,
                                     0
                                     )}
                             </td>
                             <td>
-                                {months[month].expenses.reduce(
+                                €{months[month].expenses.reduce(
                                 (accumulator, expense) => accumulator + expense.amount,
                                 0
                                 )}
                             </td>
                             <td>
-                                {months[month].income.reduce(
+                                €{months[month].income.reduce(
                                 (accumulator, income) => accumulator + income.amount,
                                 0
                                 ) -

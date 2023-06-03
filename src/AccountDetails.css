@@ -4,3 +4,11 @@
     align-items: center;
     flex-direction: column;
 }
+
+.details h2 {
+    display: inline-block;
+}
+
+.details .account-balance {
+    font-size: 1.3rem;
+}

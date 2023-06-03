@@ -9,6 +9,11 @@ function AccountDetails() {
     const [account, setAccount] = useState(null);
     const [months, setMonths] = useState([]); 
 
+    let balanceClass = "account-balance";
+    if (account && account.balance < 0) {
+        balanceClass += " negative";
+    }
+
     useEffect(() => {
         fetch(`http://localhost:8000/accounts/${id}`)
             .then(response => response.json())
@@ -20,8 +25,7 @@ function AccountDetails() {
 
     return (
         <div className="details">
-            <h1>Account Details</h1>
-            {account && <><p>{account.name}</p><p>{account.balance}</p></>}
+            {account && <><h1>{account.name}</h1><h2>You currently have <h2 className={balanceClass}>{account.balance}</h2> on this account</h2></>}
             {months && <AccountTable months={months}/>}
         </div>
     );

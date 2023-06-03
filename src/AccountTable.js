@@ -1,3 +1,5 @@
+import './AccountTable.css';
+
 function AccountTable(props) {
 
     const months = props.months;

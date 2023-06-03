@@ -25,7 +25,7 @@ function AccountDetails() {
 
     return (
         <div className="details">
-            {account && <><h1>{account.name}</h1><h2>You currently have <h2 className={balanceClass}>{account.balance}</h2> on this account</h2></>}
+            {account && <><h1>{account.name}</h1><h2>You currently have <span className={balanceClass}>{account.balance}</span> on this account</h2></>}
             {months && <AccountTable months={months}/>}
         </div>
     );

@@ -10,6 +10,10 @@
     padding: 0 2rem;
 }
 
+.total {
+    grid-area: 2 / 1 / 2 / 3;
+}
+
 .tables table tr:hover {
     cursor: default;
     background-color: transparent;

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import DetailTable from './DetailTable';
 import CategoryTable from './CategoryTable';
+import MonthTotal from './MonthTotal';
 
 function MonthlyDetails() {
 
@@ -24,6 +25,7 @@ function MonthlyDetails() {
             <div className='tables'>
                 <DetailTable account={account} month={month} type='income'/>
                 <DetailTable account={account} month={month} type='expenses'/>
+                <MonthTotal account={account} month={month}/>
                 <CategoryTable account={account} month={month} type='income'/>
                 <CategoryTable account={account} month={month} type='expenses'/>
             </div></>}

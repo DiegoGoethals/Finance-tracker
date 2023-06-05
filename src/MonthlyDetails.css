@@ -2,10 +2,6 @@
     text-align: center;
 }
 
-h2 {
-    text-transform: capitalize;
-}
-
 .tables {
     display: grid;
     grid-template-columns: 1fr 1fr;

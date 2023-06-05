@@ -18,7 +18,7 @@ function MonthlyDetails() {
 
     return (
         <div className="monthly-details">
-            <h2>{month}</h2>
+            <h2>Overview of income and expenses of the month {month} on the {account.name} account</h2>
             <div className='tables'>
                 <table className="income">
                     <caption>Income</caption>
@@ -26,6 +26,7 @@ function MonthlyDetails() {
                         <tr>
                             <th>Amount</th>
                             <th>Source</th>
+                            <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,6 +34,7 @@ function MonthlyDetails() {
                             <tr key={income}>
                                 <td>€{income.amount}</td>
                                 <td>{income.source}</td>
+                                <td>{income.date}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -43,6 +45,7 @@ function MonthlyDetails() {
                         <tr>
                             <th>Amount</th>
                             <th>target</th>
+                            <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,6 +53,7 @@ function MonthlyDetails() {
                             <tr key={expense}>
                                 <td>€{expense.amount}</td>
                                 <td>{expense.target}</td>
+                                <td>{expense.date}</td>
                             </tr>
                         ))}
                     </tbody>

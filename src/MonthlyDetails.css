@@ -9,8 +9,10 @@
     padding: 0 2rem;
 }
 
-.tables table tr {
+.tables table tr:hover {
     cursor: default;
+    background-color: transparent;
+    color: black;
 }
 
 caption {

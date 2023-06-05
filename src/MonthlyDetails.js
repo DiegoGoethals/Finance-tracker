@@ -25,7 +25,7 @@ function MonthlyDetails() {
                     <thead>
                         <tr>
                             <th>Amount</th>
-                            <th>Source</th>
+                            <th>Category</th>
                             <th>Date</th>
                         </tr>
                     </thead>
@@ -33,7 +33,7 @@ function MonthlyDetails() {
                         {account && account.months[month].income.map((income) => (
                             <tr key={income}>
                                 <td>€{income.amount}</td>
-                                <td>{income.source}</td>
+                                <td>{income.category}</td>
                                 <td>{income.date}</td>
                             </tr>
                         ))}
@@ -44,7 +44,7 @@ function MonthlyDetails() {
                     <thead>
                         <tr>
                             <th>Amount</th>
-                            <th>target</th>
+                            <th>Category</th>
                             <th>Date</th>
                         </tr>
                     </thead>
@@ -52,7 +52,7 @@ function MonthlyDetails() {
                         {account && account.months[month].expenses.map((expense) => (
                             <tr key={expense}>
                                 <td>€{expense.amount}</td>
-                                <td>{expense.target}</td>
+                                <td>{expense.category}</td>
                                 <td>{expense.date}</td>
                             </tr>
                         ))}

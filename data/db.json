@@ -8,14 +8,14 @@
                 "january": {
                     "income": [
                         {
-                            "source": "babysitting",
+                            "category": "babysitting",
                             "amount": 80,
                             "date": "2023-01-01"
                         }
                     ],
                     "expenses": [
                         {
-                            "target": "food",
+                            "category": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }

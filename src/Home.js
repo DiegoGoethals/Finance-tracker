@@ -1,4 +1,5 @@
 import AccountCard from './AccountCard';
+import AddAccountForm from './AddAccountForm';
 import AddCard from './AddCard';
 import './Home.css';
 import { useEffect, useState } from 'react';
@@ -18,6 +19,7 @@ function Home() {
     return (
         <div className="home">
             <h2>Accounts</h2>
+            <AddAccountForm/>
             <ul id='accounts'>
                 {accounts.map((account) => (
                     <li key={account.id}>

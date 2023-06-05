@@ -1,6 +1,7 @@
 import './MonthlyDetails.css';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import DetailTable from './DetailTable';
 
 function MonthlyDetails() {
 
@@ -20,44 +21,8 @@ function MonthlyDetails() {
         <div className="monthly-details">
             {account && <><h2>Overview of income and expenses of the month {month} on the {account.name} account</h2>
             <div className='tables'>
-                <table className="income">
-                    <caption>Income</caption>
-                    <thead>
-                        <tr>
-                            <th>Amount</th>
-                            <th>Category</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {account && account.months[month].income.map((income) => (
-                            <tr key={income}>
-                                <td>€{income.amount}</td>
-                                <td>{income.category}</td>
-                                <td>{income.date}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <table className="expenses">
-                    <caption>Expenses</caption>
-                    <thead>
-                        <tr>
-                            <th>Amount</th>
-                            <th>Category</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {account && account.months[month].expenses.map((expense) => (
-                            <tr key={expense}>
-                                <td>€{expense.amount}</td>
-                                <td>{expense.category}</td>
-                                <td>{expense.date}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <DetailTable account={account} month={month} type='income'/>
+                <DetailTable account={account} month={month} type='expenses'/>
             </div></>}
         </div>
     );

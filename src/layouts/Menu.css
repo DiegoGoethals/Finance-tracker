@@ -13,6 +13,16 @@
     transition: transform 0.3s ease-in-out;
 }
 
+.accounts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.4rem;
+}
+
+.accounts h3 {
+    margin: 0.1rem 0;
+}
+
 a {
     color: whitesmoke;
     text-decoration: none;

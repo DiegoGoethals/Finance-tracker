@@ -1,3 +1,4 @@
+import './MonthlyDetails.css';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -17,40 +18,43 @@ function MonthlyDetails() {
 
     return (
         <div className="monthly-details">
-            <table className="income">
-                <caption>Income</caption>
-                <thead>
-                    <tr>
-                        <th>Amount</th>
-                        <th>Source</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {account && account.months[month].income.map((income) => (
-                        <tr key={income.id}>
-                            <td>€{income.amount}</td>
-                            <td>{income.source}</td>
+            <h2>{month}</h2>
+            <div className='tables'>
+                <table className="income">
+                    <caption>Income</caption>
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>Source</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-            <table className="expenses">
-                <caption>Expenses</caption>
-                <thead>
-                    <tr>
-                        <th>Amount</th>
-                        <th>target</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {account && account.months[month].expenses.map((expense) => (
-                        <tr key={expense.id}>
-                            <td>€{expense.amount}</td>
-                            <td>{expense.target}</td>
+                    </thead>
+                    <tbody>
+                        {account && account.months[month].income.map((income) => (
+                            <tr key={income}>
+                                <td>€{income.amount}</td>
+                                <td>{income.source}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                <table className="expenses">
+                    <caption>Expenses</caption>
+                    <thead>
+                        <tr>
+                            <th>Amount</th>
+                            <th>target</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {account && account.months[month].expenses.map((expense) => (
+                            <tr key={expense}>
+                                <td>€{expense.amount}</td>
+                                <td>{expense.target}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

@@ -9,6 +9,10 @@
     padding: 0 2rem;
 }
 
+.tables table tr {
+    cursor: default;
+}
+
 caption {
     font-size: 1.3rem;
     font-weight: bold;

@@ -18,7 +18,7 @@ function MonthlyDetails() {
 
     return (
         <div className="monthly-details">
-            <h2>Overview of income and expenses of the month {month} on the {account.name} account</h2>
+            {account && <><h2>Overview of income and expenses of the month {month} on the {account.name} account</h2>
             <div className='tables'>
                 <table className="income">
                     <caption>Income</caption>
@@ -58,7 +58,7 @@ function MonthlyDetails() {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </div></>}
         </div>
     );
 }

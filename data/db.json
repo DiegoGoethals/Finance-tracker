@@ -15,7 +15,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -31,7 +31,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -47,7 +47,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -63,7 +63,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -79,7 +79,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -95,7 +95,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -111,7 +111,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -127,7 +127,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -143,7 +143,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -159,7 +159,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -175,7 +175,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -191,7 +191,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -214,7 +214,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -230,7 +230,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -246,7 +246,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -262,7 +262,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -278,7 +278,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -294,7 +294,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -310,7 +310,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -326,7 +326,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -342,7 +342,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -358,7 +358,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -374,7 +374,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }
@@ -390,7 +390,7 @@
                     ],
                     "expenses": [
                         {
-                            "source": "food",
+                            "target": "food",
                             "amount": 20,
                             "date": "2023-01-01"
                         }

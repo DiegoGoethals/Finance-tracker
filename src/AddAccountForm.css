@@ -7,7 +7,7 @@ dialog {
     left: 0;
 }
 
-form {
+dialog form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@ form {
     color: #ddd;
 }
 
-fieldset {
+dialog fieldset {
     font-size: 1.5rem;
     margin: 0.5rem 0;
     display: flex;
@@ -28,7 +28,7 @@ fieldset {
     background-color: transparent;
 }
 
-fieldset label {
+dialog fieldset label {
     width: 100%;
     text-align: left;
 }

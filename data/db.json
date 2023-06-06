@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "sidejobs",
-      "balance": 760,
+      "balance": 726,
       "months": {
         "january": {
           "income": [
@@ -54,6 +54,11 @@
             {
               "category": "food",
               "amount": 41,
+              "date": "2023-06-06"
+            },
+            {
+              "category": "food",
+              "amount": 34,
               "date": "2023-06-06"
             }
           ]

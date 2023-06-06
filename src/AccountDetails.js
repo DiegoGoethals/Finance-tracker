@@ -2,6 +2,7 @@ import "./AccountDetails.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AccountTable from "./AccountTable";
+import TransActionForm from "./TransactionForm";
 
 function AccountDetails() {
     const { id } = useParams();
@@ -64,19 +65,7 @@ function AccountDetails() {
     return (
         <div className="details">
             {account && <><h1>{account.name}</h1><h2>You currently have <span className={balanceClass}>{account.balance}</span> on this account</h2></>}
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="amount">Amount</label>
-                <input type="number" id="amount" name="amount" min="0" required/>
-                <label htmlFor="category">Category</label>
-                <select name="category" id="category">
-                    {categories && categories.map(category => <option key={category.id} value={category.name}>{category.name}</option>)}
-                </select>
-                <input type="radio" id="expense" name="type" value="expense" defaultChecked/>
-                <label htmlFor="expense">Expense</label>
-                <input type="radio" id="income" name="type" value="income"/>
-                <label htmlFor="income">Income</label>
-                <button type="submit">Add</button>
-            </form>
+            {categories && <TransActionForm handleSubmit={handleSubmit} categories={categories}/>}
             {months && <AccountTable months={months} account={account}/>}
         </div>
     );

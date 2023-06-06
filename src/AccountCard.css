@@ -11,6 +11,7 @@
     box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    position: relative;
 }
 
 .account-card:hover {
@@ -48,4 +49,18 @@
 
 .account-balance::before {
     content: "€";
+}
+
+.fa-circle-xmark {
+    position: absolute;
+    color: black;
+    font-size: 1.5rem;
+    top: 0;
+    right: 0;
+    padding: 0.5rem .5rem 0 0;
+}
+
+.fa-circle-xmark:hover {
+    color: red;
+    transform: scale(1.1);
 }

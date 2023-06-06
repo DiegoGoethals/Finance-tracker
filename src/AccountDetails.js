@@ -38,13 +38,8 @@ function AccountDetails() {
         const category = event.target.category.value;
         const type = event.target.type.value;
         const date = new Date().toISOString().split('T')[0];
-        const newTransaction = {
-            category: category,
-            amount: amount,
-            date: date
-        };
+        const newTransaction = {category, amount, date};
         const month = new Date().toLocaleString('en-us', { month: "long" }).toLowerCase();
-        console.log(month, account, account.months[month]);
         const updatedAccount = {...account};
         if (type === "expense") {
             updatedAccount.balance -= amount;
@@ -53,7 +48,6 @@ function AccountDetails() {
             updatedAccount.balance += amount;
             updatedAccount.months[month].income.push(newTransaction);
         }
-        console.log(updatedAccount);
         fetch(`http://localhost:8000/accounts/${id}`, {
             method: 'PUT',
             headers: {
@@ -61,7 +55,6 @@ function AccountDetails() {
             },
             body: JSON.stringify(updatedAccount)
         }).then(response => response.json()).then(data => {
-            console.log(data);
             setAccount(data);
             setMonths(data.months);
         }

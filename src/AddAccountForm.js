@@ -1,3 +1,4 @@
+import './AddAccountForm.css';
 import { useState } from 'react';
 
 function AddAccountForm() {
@@ -62,9 +63,7 @@ function AddAccountForm() {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newAccount)
-        })
-            .then(response => response.json())
-            .then(_ => {
+        }).then(response => response.json()).then(_ => {
                 document.querySelector('dialog').close();
                 window.location.reload();
             });
@@ -73,11 +72,22 @@ function AddAccountForm() {
     return (
         <dialog>
             <form onSubmit={addAccount}>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" value={name} required onChange={(e) => {setName(e.target.value)}}/>
-                <label htmlFor="balance">Starting balance:</label>
-                <input type="number" id="balance" name="balance" min="0" value={balance} required onChange={(e) => setBalance(e.target.value)}/>
-                <button type="submit">Add</button>
+                <fieldset>
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" autoComplete='off' id="name" name="name" value={name} required onChange={(e) => {setName(e.target.value)}}/>
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="balance">Starting balance:</label>
+                    <input type="number" autoComplete='off' id="balance" name="balance" min="0" value={balance} required onChange={(e) => setBalance(e.target.value)}/>
+                </fieldset>
+                <div className='buttons'>
+                    <button type="button" onClick={() => {
+                        setName('');
+                        setBalance(0);
+                        document.querySelector('dialog').close();
+                    }}>Cancel</button>
+                    <button type="submit">Add</button>
+                </div>
             </form>
         </dialog>
     );

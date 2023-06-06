@@ -1,0 +1,45 @@
+dialog {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #ddd;
+}
+
+fieldset {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
+fieldset label {
+    width: 100%;
+    text-align: left;
+}
+
+form * {
+    font-size: 1.5rem;
+}
+
+.buttons {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "sidejobs",
-      "balance": 100,
+      "balance": 59,
       "months": {
         "january": {
           "income": [
@@ -98,6 +98,11 @@
               "category": "food",
               "amount": 20,
               "date": "2023-01-01"
+            },
+            {
+              "category": "food",
+              "amount": 41,
+              "date": "2023-06-06"
             }
           ]
         },
@@ -397,6 +402,36 @@
           ]
         }
       }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "food"
+    },
+    {
+      "id": 2,
+      "name": "work"
+    },
+    {
+      "id": 3,
+      "name": "bills"
+    },
+    {
+      "id": 4,
+      "name": "entertainment"
+    },
+    {
+      "id": 5,
+      "name": "clothing"
+    },
+    {
+      "id": 6,
+      "name": "transportation"
+    },
+    {
+      "id": 7,
+      "name": "other"
     }
   ]
 }

@@ -8,6 +8,7 @@ function AccountDetails() {
 
     const [account, setAccount] = useState(null);
     const [months, setMonths] = useState([]); 
+    const [categories, setCategories] = useState([]);
 
     let balanceClass = "account-balance";
     if (account && account.balance < 0) {
@@ -23,9 +24,66 @@ function AccountDetails() {
             });
     }, [id]);
 
+    useEffect(() => {
+        fetch(`http://localhost:8000/categories`)
+            .then(response => response.json())
+            .then(data => {
+                setCategories(data);
+            });
+    }, []);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const amount = parseInt(event.target.amount.value);
+        const category = event.target.category.value;
+        const type = event.target.type.value;
+        const date = new Date().toISOString().split('T')[0];
+        const newTransaction = {
+            category: category,
+            amount: amount,
+            date: date
+        };
+        const month = new Date().toLocaleString('en-us', { month: "long" }).toLowerCase();
+        console.log(month, account, account.months[month]);
+        const updatedAccount = {...account};
+        if (type === "expense") {
+            updatedAccount.balance -= amount;
+            updatedAccount.months[month].expenses.push(newTransaction);
+        } else {
+            updatedAccount.balance += amount;
+            updatedAccount.months[month].income.push(newTransaction);
+        }
+        console.log(updatedAccount);
+        fetch(`http://localhost:8000/accounts/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedAccount)
+        }).then(response => response.json()).then(data => {
+            console.log(data);
+            setAccount(data);
+            setMonths(data.months);
+        }
+        );
+    }
+
     return (
         <div className="details">
             {account && <><h1>{account.name}</h1><h2>You currently have <span className={balanceClass}>{account.balance}</span> on this account</h2></>}
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="amount">Amount</label>
+                <input type="number" id="amount" name="amount" min="0" required/>
+                <label htmlFor="category">Category</label>
+                <select name="category" id="category">
+                    {categories && categories.map(category => <option key={category.id} value={category.name}>{category.name}</option>)}
+                </select>
+                <input type="radio" id="expense" name="type" value="expense" defaultChecked/>
+                <label htmlFor="expense">Expense</label>
+                <input type="radio" id="income" name="type" value="income"/>
+                <label htmlFor="income">Income</label>
+                <button type="submit">Add</button>
+            </form>
             {months && <AccountTable months={months} account={account}/>}
         </div>
     );

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "sidejobs",
-      "balance": 59,
+      "balance": 100,
       "months": {
         "january": {
           "income": [
@@ -91,6 +91,11 @@
               "category": "babysitting",
               "amount": 80,
               "date": "2023-01-01"
+            },
+            {
+              "category": "work",
+              "amount": 41,
+              "date": "2023-06-06"
             }
           ],
           "expenses": [

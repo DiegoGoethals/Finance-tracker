@@ -25,7 +25,7 @@ function CategoryTable(props) {
             </thead>
             <tbody>
             {account && categoryAmounts.map((category) => (
-                    <tr key={category}>
+                    <tr key={(Math.random() + 1).toString(36).substring(7)}>
                         <td>{category.category}</td>
                         <td>€{category.amount}</td>
                     </tr>

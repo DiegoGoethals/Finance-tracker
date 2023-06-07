@@ -11,7 +11,7 @@ function AccountTable(props) {
     
     const clickRowHandler = (event) => {
         const month = event.target.parentElement.id;
-        window.location.href = `http://localhost:3000/accounts/${account.name}/${month}`;
+        window.location.href = `https://finance-tracker-476fd.web.app/accounts/${account.name}/${month}`;
     }
 
     return (

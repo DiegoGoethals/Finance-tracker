@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AccountTable from "./AccountTable";
 import TransActionForm from "./TransactionForm";
+import localforage from "localforage";
 
 function AccountDetails() {
     const { id } = useParams();
 
     const [account, setAccount] = useState(null);
-    const [months, setMonths] = useState([]); 
-    const [categories, setCategories] = useState([]);
+    const [months, setMonths] = useState([]);
 
     let balanceClass = "account-balance";
     if (account && account.balance < 0) {
@@ -17,40 +17,25 @@ function AccountDetails() {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:8000/accounts/${id}`)
-            .then(response => response.json())
-            .then(data => {
-                const updatedAccount = {...data};
-                Object.keys(updatedAccount.months).forEach(month => {
-                    updatedAccount.months[month].income = updatedAccount.months[month].income.filter(income => {
-                        return parseInt(income.date.split('-')[0]) === new Date().getFullYear();
-                    });
-                });
-                Object.keys(updatedAccount.months).forEach(month => {
-                    updatedAccount.months[month].expenses = updatedAccount.months[month].expenses.filter(expense => {
-                        return parseInt(expense.date.split('-')[0]) === new Date().getFullYear();
-                    });
-                });
-                fetch(`http://localhost:8000/accounts/${id}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(updatedAccount)
-                }).then(response => response.json()).then(data => {
-                    setAccount(data);
-                    setMonths(data.months);
+        localforage.getItem("accounts").then(accounts => {
+            const account = accounts[id];
+            const updatedAccount = {...account};
+            Object.keys(updatedAccount.months).forEach(month => {
+                updatedAccount.months[month].income = updatedAccount.months[month].income.filter(income => {
+                    return parseInt(income.date.split('-')[0]) === new Date().getFullYear();
                 });
             });
+            Object.keys(updatedAccount.months).forEach(month => {
+                updatedAccount.months[month].expenses = updatedAccount.months[month].expenses.filter(expense => {
+                    return parseInt(expense.date.split('-')[0]) === new Date().getFullYear();
+                });
+            });
+            accounts[id] = updatedAccount;
+            setAccount(updatedAccount);
+            setMonths(updatedAccount.months);
+            localforage.setItem("accounts", accounts);
+        });
     }, [id]);
-
-    useEffect(() => {
-        fetch(`http://localhost:8000/categories`)
-            .then(response => response.json())
-            .then(data => {
-                setCategories(data);
-            });
-    }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -68,6 +53,13 @@ function AccountDetails() {
             updatedAccount.balance += amount;
             updatedAccount.months[month].income.push(newTransaction);
         }
+        setAccount(updatedAccount);
+        setMonths(updatedAccount.months);
+        localforage.getItem("accounts").then(accounts => {
+            accounts[id] = updatedAccount;
+            localforage.setItem("accounts", accounts);
+        })
+        /*
         fetch(`http://localhost:8000/accounts/${id}`, {
             method: 'PUT',
             headers: {
@@ -77,14 +69,14 @@ function AccountDetails() {
         }).then(response => response.json()).then(data => {
             setAccount(data);
             setMonths(data.months);
-        }
-        );
+        });
+        */
     }
 
     return (
         <div className="details">
             {account && <><h1>{account.name}</h1><h2>You currently have <span className={balanceClass}>{account.balance}</span> on this account</h2></>}
-            {categories && <TransActionForm handleSubmit={handleSubmit} categories={categories}/>}
+            {account && <TransActionForm handleSubmit={handleSubmit}/>}
             {months && <AccountTable months={months} account={account}/>}
         </div>
     );

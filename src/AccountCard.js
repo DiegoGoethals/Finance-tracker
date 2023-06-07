@@ -13,11 +13,13 @@ function AccountCard(props) {
     const deleteAccount = (e) => {
         e.stopPropagation();
         e.preventDefault();
+        /*
         fetch(`http://localhost:8000/accounts/${id}`, {
             method: "DELETE",
-            }).then(() => {
-                window.location.reload();
-            });
+        }).then(() => {
+            window.location.reload();
+        });
+        */
     }
 
     return (

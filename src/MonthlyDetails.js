@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import DetailTable from './DetailTable';
 import CategoryTable from './CategoryTable';
 import MonthTotal from './MonthTotal';
+import localforage from 'localforage';
 
 function MonthlyDetails() {
 
@@ -12,11 +13,9 @@ function MonthlyDetails() {
     const [account, setAccount] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/accounts/${id}`)
-            .then(response => response.json())
-            .then(data => {
-                setAccount(data);
-            });
+        localforage.getItem("accounts").then(accounts => {
+            setAccount(accounts[id]);
+        });
     }, [id]);
 
     return (

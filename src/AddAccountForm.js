@@ -1,3 +1,4 @@
+import localforage from 'localforage';
 import './AddAccountForm.css';
 import { useState } from 'react';
 
@@ -59,14 +60,15 @@ function AddAccountForm() {
     const addAccount = (e) => {
         e.preventDefault();
         const newAccount = { name, balance, months };
-        fetch('http://localhost:8000/accounts', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newAccount)
-        }).then(response => response.json()).then(_ => {
+        localforage.getItem('accounts').then(accounts => {
+            const id = accounts.length;
+            newAccount.id = id;
+            accounts.push(newAccount);
+            localforage.setItem('accounts', accounts).then(_ => {
                 document.querySelector('dialog').close();
                 window.location.reload();
             });
+        });
     }
 
     return (

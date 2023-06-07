@@ -1,17 +1,16 @@
 import "./Menu.css";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import localforage from "localforage";
 
 function Menu() {
 
     const [accounts, setAccounts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8000/accounts')
-            .then(response => response.json())
-            .then(data => {
-                setAccounts(data);
-            });
+        localforage.getItem("accounts").then(accounts => {
+            setAccounts(accounts);
+        });
     }, []);
 
     const closeMenu = () => {

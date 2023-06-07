@@ -1,7 +1,8 @@
 #accounts {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .home {

@@ -1,3 +1,4 @@
+import localforage from 'localforage';
 import AccountCard from './AccountCard';
 import AddAccountForm from './AddAccountForm';
 import AddCard from './AddCard';
@@ -9,11 +10,9 @@ function Home() {
     const [accounts, setAccounts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8000/accounts')
-            .then(response => response.json())
-            .then(data => {
-                setAccounts(data);
-            });
+        localforage.getItem('accounts').then(accounts => {
+            setAccounts(accounts);
+        });
     }, []);
 
     return (
@@ -21,7 +20,7 @@ function Home() {
             <h2>Accounts</h2>
             <AddAccountForm/>
             <ul id='accounts'>
-                {accounts.map((account) => (
+                {accounts && accounts.map((account) => (
                     <li key={account.id}>
                         <AccountCard account={account} id={account.id}/>
                     </li>

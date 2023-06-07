@@ -2,7 +2,7 @@ import './TransactionForm.css';
 
 function TransActionForm(props) {
 
-    const {handleSubmit, categories} = props;
+    const {handleSubmit} = props;
 
     return (
         <form onSubmit={handleSubmit} className='transaction'>
@@ -14,8 +14,14 @@ function TransActionForm(props) {
             <fieldset>
                 <label htmlFor="category">Category</label>
                 <select name="category" id="category">
-                {categories && categories.map(category => <option key={category.id} value={category.name}>{category.name}</option>)}
-            </select>
+                    <option>food/drinks</option>
+                    <option>work</option>
+                    <option>bills</option>
+                    <option>entertainment</option>
+                    <option>clothing</option>
+                    <option>transportation</option>
+                    <option>other</option>
+                </select>
             </fieldset>
             <fieldset className='radio'>
                 <input type="radio" id="expense" name="type" value="expense" defaultChecked/>

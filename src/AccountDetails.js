@@ -20,8 +20,27 @@ function AccountDetails() {
         fetch(`http://localhost:8000/accounts/${id}`)
             .then(response => response.json())
             .then(data => {
-                setAccount(data);
-                setMonths(data.months);
+                const updatedAccount = {...data};
+                Object.keys(updatedAccount.months).forEach(month => {
+                    updatedAccount.months[month].income = updatedAccount.months[month].income.filter(income => {
+                        return parseInt(income.date.split('-')[0]) === new Date().getFullYear();
+                    });
+                });
+                Object.keys(updatedAccount.months).forEach(month => {
+                    updatedAccount.months[month].expenses = updatedAccount.months[month].expenses.filter(expense => {
+                        return parseInt(expense.date.split('-')[0]) === new Date().getFullYear();
+                    });
+                });
+                fetch(`http://localhost:8000/accounts/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedAccount)
+                }).then(response => response.json()).then(data => {
+                    setAccount(data);
+                    setMonths(data.months);
+                });
             });
     }, [id]);
 

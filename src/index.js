@@ -7,9 +7,20 @@ import localforage from 'localforage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
-    .then(registration => {
-      console.log('Service Worker registered: ', registration.scope);
+  // Check if a service worker is already registered
+  navigator.serviceWorker.getRegistration()
+    .then(existingRegistration => {
+      if (existingRegistration) {
+        console.log('Service Worker is already registered: ', existingRegistration.scope);
+        return existingRegistration;
+      }
+  
+      // If no existing registration, register the service worker
+      return navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('Service Worker registered: ', registration.scope);
+          return registration;
+        });
     })
     .catch(error => {
       console.log('Service Worker registration failed: ', error);

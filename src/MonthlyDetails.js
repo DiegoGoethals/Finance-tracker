@@ -8,19 +8,20 @@ import localforage from 'localforage';
 
 function MonthlyDetails() {
 
-    const { id, month } = useParams();
+    const { name, month } = useParams();
 
     const [account, setAccount] = useState(null);
 
     useEffect(() => {
         localforage.getItem("accounts").then(accounts => {
-            setAccount(accounts[id]);
+            const accountToSet = accounts.find(a => a.name === name);
+            setAccount(accountToSet);
         });
-    }, [id]);
+    }, [name]);
 
     return (
         <div className="monthly-details">
-            {account && <><h2>Overview of income and expenses of the month {month} on the {account.name} account</h2>
+            {account && <><h2>Overview of income and expenses of the month {month} on the {name} account</h2>
             <div className='tables'>
                 <DetailTable account={account} month={month} type='income'/>
                 <DetailTable account={account} month={month} type='expenses'/>

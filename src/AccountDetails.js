@@ -6,7 +6,7 @@ import TransActionForm from "./TransactionForm";
 import localforage from "localforage";
 
 function AccountDetails() {
-    const { id } = useParams();
+    const { name } = useParams();
 
     const [account, setAccount] = useState(null);
     const [months, setMonths] = useState([]);
@@ -18,7 +18,8 @@ function AccountDetails() {
 
     useEffect(() => {
         localforage.getItem("accounts").then(accounts => {
-            const account = accounts[id];
+            const account = accounts.find(account => account.name === name);
+            const id = accounts.indexOf(account);
             const updatedAccount = {...account};
             Object.keys(updatedAccount.months).forEach(month => {
                 updatedAccount.months[month].income = updatedAccount.months[month].income.filter(income => {
@@ -31,11 +32,12 @@ function AccountDetails() {
                 });
             });
             accounts[id] = updatedAccount;
-            setAccount(updatedAccount);
-            setMonths(updatedAccount.months);
-            localforage.setItem("accounts", accounts);
+            localforage.setItem("accounts", accounts).then(() => {
+                setAccount(updatedAccount);
+                setMonths(updatedAccount.months);
+            });
         });
-    }, [id]);
+    }, [name]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -53,24 +55,14 @@ function AccountDetails() {
             updatedAccount.balance += amount;
             updatedAccount.months[month].income.push(newTransaction);
         }
-        setAccount(updatedAccount);
-        setMonths(updatedAccount.months);
         localforage.getItem("accounts").then(accounts => {
-            accounts[id] = updatedAccount;
-            localforage.setItem("accounts", accounts);
-        })
-        /*
-        fetch(`http://localhost:8000/accounts/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedAccount)
-        }).then(response => response.json()).then(data => {
-            setAccount(data);
-            setMonths(data.months);
+            const accountToReplace = accounts.find(account => account.name === name);
+            accounts[accounts.indexOf(accountToReplace)] = updatedAccount;
+            localforage.setItem("accounts", accounts).then(() => {
+                setAccount(updatedAccount);
+                setMonths(updatedAccount.months);
+            });
         });
-        */
     }
 
     return (

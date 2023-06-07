@@ -61,8 +61,6 @@ function AddAccountForm() {
         e.preventDefault();
         const newAccount = { name, balance, months };
         localforage.getItem('accounts').then(accounts => {
-            const id = accounts.length;
-            newAccount.id = id;
             accounts.push(newAccount);
             localforage.setItem('accounts', accounts).then(_ => {
                 document.querySelector('dialog').close();

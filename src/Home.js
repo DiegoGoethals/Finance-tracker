@@ -21,8 +21,8 @@ function Home() {
             <AddAccountForm/>
             <ul id='accounts'>
                 {accounts && accounts.map((account) => (
-                    <li key={account.id}>
-                        <AccountCard account={account} id={account.id}/>
+                    <li key={account.name}>
+                        <AccountCard account={account}/>
                     </li>
                 ))}
             <AddCard/>

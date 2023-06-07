@@ -11,50 +11,44 @@ function AccountTable(props) {
     
     const clickRowHandler = (event) => {
         const month = event.target.parentElement.id;
-        const accountId = account.id;
-        window.location.href = `http://localhost:3000/accounts/${accountId}/${month}`;
+        window.location.href = `http://localhost:3000/accounts/${account.name}/${month}`;
     }
 
     return (
         <table>
-                <thead>
-                    <tr>
-                        <th>Month</th>
-                        <th>Income</th>
-                        <th>Expenses</th>
-                        <th>Total</th>
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Income</th>
+                    <th>Expenses</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {Object.keys(months).map((month) => (
+                    <tr key={month} id={month} onClick={clickRowHandler}>
+                        <td>{month}</td>
+                        <td>
+                            €{months[month].income.reduce(
+                            (accumulator, income) => accumulator + income.amount, 0
+                            )}
+                        </td>
+                        <td>
+                            €{months[month].expenses.reduce(
+                            (accumulator, expense) => accumulator + expense.amount, 0
+                            )}
+                        </td>
+                        <td>
+                            €{months[month].income.reduce(
+                            (accumulator, income) => accumulator + income.amount, 0
+                            ) - months[month].expenses.reduce(
+                                (accumulator, expense) => accumulator + expense.amount, 0
+                            )}
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    {Object.keys(months).map((month) => (
-                        <tr key={month} id={month} onClick={clickRowHandler}>
-                            <td>{month}</td>
-                            <td>
-                                €{months[month].income.reduce(
-                                (accumulator, income) => accumulator + income.amount,
-                                    0
-                                    )}
-                            </td>
-                            <td>
-                                €{months[month].expenses.reduce(
-                                (accumulator, expense) => accumulator + expense.amount,
-                                0
-                                )}
-                            </td>
-                            <td>
-                                €{months[month].income.reduce(
-                                (accumulator, income) => accumulator + income.amount,
-                                0
-                                ) -
-                                months[month].expenses.reduce(
-                                    (accumulator, expense) => accumulator + expense.amount,
-                                    0
-                                )}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+                ))}
+            </tbody>
+        </table>
     )
 }
 

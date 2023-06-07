@@ -26,7 +26,7 @@ function Menu() {
             <div className="accounts">
                 <h3>Accounts</h3>
                 {accounts && accounts.map((account) => (
-                    <NavLink to={`/accounts/${account.id}`} key={account.id} onClick={closeMenu}>{account.name}</NavLink>
+                    <NavLink to={`/accounts/${account.name}`} key={account.name} onClick={closeMenu}>{account.name}</NavLink>
                 ))}
             </div>
         </aside>

@@ -8,9 +8,9 @@ import MonthlyDetails from './MonthlyDetails';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout/>}>
-      <Route index element={<Home/>} />
-      <Route path='accounts/:id' element={<AccountDetails/>}/>
-      <Route path='accounts/:id/:month' element={<MonthlyDetails/>}/>
+      <Route index element={<Home/>}/>
+      <Route path='accounts/:name' element={<AccountDetails/>}/>
+      <Route path='accounts/:name/:month' element={<MonthlyDetails/>}/>
       <Route path='*' element={<h1>This page doesn't exist (yet) please go back to the home screen by clicking the header</h1>}/>
     </Route>
   )
